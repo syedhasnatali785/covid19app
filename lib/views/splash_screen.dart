@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:math' as math;
-import 'package:covid19app/views/world_stats.dart';
+import 'package:covid19app/views/world_stats_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     Timer(Duration(seconds: 3), () {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => WorldStats()),
       );
@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen>
             child: AnimatedBuilder(
               animation: _controller,
               child: Container(
-                child: Icon(Icons.coronavirus, color: Colors.red, size: 80),
+                child: Icon(Icons.coronavirus, color: Color(0xfff1E3A8A), size: 80),
               ),
               builder: (BuildContext context, Widget? iconcontainer) {
                 return Transform.rotate(
@@ -59,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen>
             child: Text(
               "Covid 19\nTracker App",
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.red, fontSize: 30),
+              style: TextStyle(color: Color(0xfff374151), fontSize: 30, fontWeight: FontWeight.bold),
             ),
           ),
         ],
